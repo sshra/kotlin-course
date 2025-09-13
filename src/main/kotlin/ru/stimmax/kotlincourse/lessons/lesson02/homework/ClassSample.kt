@@ -1,4 +1,4 @@
-package lessons.lessons.lesson02.homework
+package ru.stimmax.kotlincourse.lessons.lesson03.homework
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
