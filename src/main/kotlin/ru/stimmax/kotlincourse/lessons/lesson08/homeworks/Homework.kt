@@ -34,7 +34,7 @@ fun stringTransform(s: String): String {
     }
 
     if (s.split(" ").size == 1) {
-        result = "Иногда," + s + ", но не всегда"
+        result = "Иногда, $s, но не всегда"
     }
 
     return result
@@ -47,12 +47,12 @@ fun dateExtraction(log: String) {
 
     try {
         println(
-            "Date: ${datePattern.findAll(log).first().groupValues[0]}  Time: ${
-                timePattern.findAll(log).first().groupValues[0]
+            "Date: ${datePattern.findAll(log).last().groupValues[0]}  Time: ${
+                timePattern.findAll(log).last().groupValues[0]
             }"
         )
     } catch (e: Exception) {
-        println ("Date-time record is not found!")
+        println("Date-time record is not found!")
     }
 }
 
@@ -63,7 +63,9 @@ fun maskCreditCard(card: String): String {
 
 // 4. Форматирование адреса электронной почты
 fun formatEmail(mail: String): String {
-    return mail.replace("@", " [at] ").replace(".", " [dot] ")
+    return mail
+        .replace("@", " [at] ")
+        .replace(".", " [dot] ")
 }
 
 // 5. Извлечение имени файла из пути.
