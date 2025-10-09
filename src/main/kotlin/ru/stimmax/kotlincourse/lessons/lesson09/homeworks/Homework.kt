@@ -8,10 +8,10 @@ fun main() {
     val a1 = arrayOf(1, 2, 3, 4, 5)
 
     // Создайте пустой массив строк размером 10 элементов.
-    val a2 = Array(10) {""}
+    val a2 = Array(10) { "" }
 
     // Создайте массив из 5 элементов типа Double и заполните его значениями, являющимися удвоенным индексом элемента.
-    val a3 = DoubleArray(5) { index ->  index * 2.0 }
+    val a3 = DoubleArray(5) { index -> index * 2.0 }
 
     // Создайте массив из 5 элементов типа Int. Используйте цикл, чтобы присвоить каждому элементу значение,
     // равное его индексу, умноженному на 3.
@@ -45,7 +45,7 @@ fun main() {
             found = i
             break
         }
-        i --
+        i--
     }
     println("Index is $found.")
 
@@ -53,14 +53,16 @@ fun main() {
     // Напротив каждого элемента должно быть написано “чётное” или “нечётное”.
     val a9 = Array(10) { Random.nextInt(100) }
     for (elm in a9) {
-        println("$elm is ${ if (elm % 2 == 0) "even" else "odd"}")
+        println("$elm is ${if (elm % 2 == 0) "even" else "odd"}")
     }
 
     // Создай функцию, которая принимает массив строк и строку для поиска. Функция должна находить в массиве элемент,
     // в котором принятая строка является подстрокой (метод contains()). Верни найденный элемент из функции в виде строки
-    println (task10(
-        arrayOf("Test String", "Super Test String"),
-        "Super")
+    println(
+        task10(
+            arrayOf("Test String", "Super Test String"),
+            "Super"
+        )
     )
 
     // ********* Работа со списками List ************
@@ -69,6 +71,7 @@ fun main() {
 
     // Создайте неизменяемый список строк, содержащий три элемента (например, "Hello", "World", "Kotlin").
     val list2 = listOf("Hello", "World", "Kotlin")
+    println(list2)
 
     // Создайте изменяемый список целых чисел и инициализируйте его значениями от 1 до 5.
     val list3 = mutableListOf<Int>(1, 2, 3, 4, 5)
@@ -170,8 +173,8 @@ fun main() {
     }
 
     // Создайте два множества целых чисел и найдите их пересечение (общие элементы). Реши задачу через вложенные циклы.
-    val set9_1 = setOf<Int>(1,2,3,4,5)
-    val set9_2 = setOf<Int>(5,6,7,8,9)
+    val set9_1 = setOf<Int>(1, 2, 3, 4, 5)
+    val set9_2 = setOf<Int>(5, 6, 7, 8, 9)
     // val set9 = set9_1 + set9_2
     val set9 = mutableSetOf<Int>()
 
@@ -220,7 +223,7 @@ fun task10(a: Array<String>, s: String): String {
 }
 
 fun setTask7(a: Set<String>, s: String): Boolean {
-     // return a.contains(s)
+    // return a.contains(s)
     var result = false
     for (elm in a) {
         if (elm == s) {
