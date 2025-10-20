@@ -3,7 +3,6 @@
 import kotlin.random.Random
 
 fun main() {
-
     val col = getRandomIntList(null)
     println(col)
 
