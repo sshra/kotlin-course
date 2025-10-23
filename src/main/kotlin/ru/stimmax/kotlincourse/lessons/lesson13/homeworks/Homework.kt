@@ -1,4 +1,6 @@
-﻿package com.stimmax.ru.stimmax.kotlincourse.lessons.lesson13.homeworks
+﻿@file:Suppress("LanguageDetectionInspection")
+
+package com.stimmax.ru.stimmax.kotlincourse.lessons.lesson13.homeworks
 
 import kotlin.random.Random
 
@@ -90,6 +92,7 @@ fun main() {
     val usageSample = set10.toMutableMap().apply {
         put("Software v11", "Data of software v11")
     }
+    usageSample += ("Value" to "Data")
     println(usageSample)
 
     // Используя словарь с настройками тестирования для различных мобильных устройств (ключ — модель устройства,
@@ -122,7 +125,7 @@ fun main() {
         }
     }
     println("Task 13")
-    println(set13.filter { it.key.split("_")[1] == "1" })
+    println(set13.filterKeys { it.split("_")[1] == "1" })
 
     // У вас есть словарь, где ключи — это названия функциональных модулей приложения, а значения — результаты их
     // тестирования. Проверьте, есть ли модули с неудачным тестированием.
@@ -159,8 +162,7 @@ fun main() {
 
     // Исключите из отчета по автоматизированному тестированию те случаи, где тесты были пропущены
     // (имеют статус “skipped”). Ключи - название теста, значения - статус.
-    val set18 = set13.filterValues { it != "skipped" }.toMutableMap() // переиспользую словарь из 13го задания
-
+    val set18 = set13.filterNot { it.value == "skipped" }.toMutableMap() // переиспользую словарь из 13го задания
 
     // Создайте копию словаря с конфигурациями тестирования удалив из него несколько конфигураций.
     val set19 = set9 - "conf-1" - "conf-2"
